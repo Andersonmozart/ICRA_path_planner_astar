@@ -63,7 +63,7 @@
 enum possible_states {Not_visited, Open, Closed};
 enum motion_direction {Forward, Backward};
 
-#define DRAW_EXPANSION_TREE 0
+#define DRAW_EXPANSION_TREE 1
 #define RUN_EXPERIMENT 0
 static carmen_point_t experiments_ICRA[][2] = {{{7757871.12, -363569.71, -0.713516}, {7757917.2, -363591.2, -2.245537}}, /* Primeiro Experimento RUN_EXPERIMENT = 1*/
 											  {{7757871.12, -363569.71, -0.713516},  {7757914.4, -363592.4, 0.904827 }},	/* Segundo Experimento RUN_EXPERIMENT = 2*/

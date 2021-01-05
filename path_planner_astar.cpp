@@ -789,7 +789,7 @@ get_goal_distance_map(carmen_point_t *goal_pose, carmen_obstacle_distance_mapper
 		{
 			pos_x = get_distance_map_x(x, obstacle_distance_grid_map);
 			pos_y = get_distance_map_y(y, obstacle_distance_grid_map);
-			if (is_valid_grid_value(x, y, astar_config.state_map_resolution) == 0 || obstacle_distance(pos_x, pos_y, obstacle_distance_grid_map) <= OBSTACLE_DISTANCE_MIN){
+			if (is_valid_grid_value(x, y, astar_config.state_map_resolution) == 0 || obstacle_distance(pos_x, pos_y, obstacle_distance_grid_map) <= astar_config.state_map_resolution){
 				cost_map[y + x * y_size] = 1.0; // Espaco ocupado eh representado como 1.0
 			}
 		}
@@ -1563,6 +1563,8 @@ carmen_path_planner_astar_search(pose_node *initial_pose, pose_node *goal_pose,
 						{
 							grid_state_map[x][y][theta][direction]->state = Open;
 							grid_state_map[x][y][theta][direction]->g = N[i]->g;
+
+
 							FH.push(N[i]);
 						}
 						else
